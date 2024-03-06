@@ -189,7 +189,9 @@ local function SellToPed(ped)
                                                 ClearPedTasksImmediately(entity)
                                                 lastPed[#lastPed + 1] = entity
                                                 exports['qb-target']:RemoveZone('sellingPed')
-                                                PoliceCallCornerselling()
+                                                if math.random() <= 0.25 then
+                                                    PoliceCallCornerselling()
+                                                end
                                             end)
                                         end
                                     end,
