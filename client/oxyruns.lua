@@ -68,12 +68,13 @@ AddEventHandler("qb-drugs:client:getoxylocationroute", function()
 			end,
 		})
 	end
-	if unlucky <= Config.PoliceAlertOxy then 
-        PolicecallOxy()
-    end
+	
 	local current = "g_m_y_famdnf_01"
     lib.requestModel(current, 500)
     oxybuyer = CreatePed(0, current,CurrentLocation.x,CurrentLocation.y,CurrentLocation.z-1, false, false)
+	if unlucky <= Config.PoliceAlertOxy then
+		PolicecallOxy()
+	end
 	SetEntityHeading(oxybuyer, 180)
      FreezeEntityPosition(oxybuyer, true)
     SetEntityInvincible(oxybuyer, true)
